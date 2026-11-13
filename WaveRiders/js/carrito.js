@@ -1,8 +1,8 @@
-/* ===== CARRITO DE WAVE RIDERS =====
-   las motos se guardan en el localStorage del navegador,
-   asi no se pierden al cambiar de pagina.
-   el carrito es una lista de motos asi:
-   [ { id, nombre, precio, foto, cantidad }, ... ] */
+/* ----- CARRITO DE WAVE RIDERS ------*/
+
+
+// url del webhook de Make para los pedidos (Make lo guarda en Airtable y me avisa por Telegram)
+let urlPedido = "https://hook.eu1.make.com/5mnp9fvzzpxdmlkn6dydfkc369mg6dia";
 
 
 /*-----leer y guardar el carrito-----*/
@@ -32,11 +32,6 @@ function buscarMoto(carrito, id) {
     return -1;
 }
 
-// pone el punto de los miles: 21000 -> 21.000
-// (en aleman tambien lo pone en los numeros de 4 cifras, en español no)
-function ponerPuntos(numero) {
-    return numero.toLocaleString("de-DE");
-}
 
 
 /*-----numerito rojo al lado de Carrito en el menu-----*/
@@ -62,13 +57,11 @@ function actualizarContador() {
 
 
 /*-----boton comprar del catalogo-----*/
-// los datos de la moto van en el propio boton (data-id, data-nombre...)
 function anadirMoto(boton) {
     let carrito = leerCarrito();
     let posicion = buscarMoto(carrito, boton.dataset.id);
 
     if (posicion == -1) {
-        // no estaba, la metemos con cantidad 1
         carrito.push({
             id: boton.dataset.id,
             nombre: boton.dataset.nombre,
@@ -77,13 +70,12 @@ function anadirMoto(boton) {
             cantidad: 1
         });
     } else {
-        // ya estaba, le sumamos una
         carrito[posicion].cantidad++;
     }
 
     guardarCarrito(carrito);
 
-    // el boton cambia un momento para que se vea que se ha añadido
+  
     boton.textContent = "Añadida";
     boton.classList.add("anadida");
     setTimeout(function () {
@@ -105,7 +97,7 @@ function pintarCarrito() {
     let unidades = 0;
     lista.innerHTML = "";
 
-    // una fila por cada moto
+
     for (let i = 0; i < carrito.length; i++) {
         let moto = carrito[i];
         let subtotal = moto.precio * moto.cantidad;
@@ -142,7 +134,6 @@ function pintarCarrito() {
     }
 }
 
-// botones - y + (minimo 1 y maximo 5 de cada moto)
 function cambiarCantidad(id, cambio) {
     let carrito = leerCarrito();
     let posicion = buscarMoto(carrito, id);
@@ -155,7 +146,7 @@ function cambiarCantidad(id, cambio) {
     }
 }
 
-// boton quitar de cada fila
+
 function quitarMoto(id) {
     let carrito = leerCarrito();
     let posicion = buscarMoto(carrito, id);
@@ -164,7 +155,6 @@ function quitarMoto(id) {
     pintarCarrito();
 }
 
-// boton vaciar carrito
 function vaciarCarrito() {
     localStorage.removeItem("carrito");
     actualizarContador();
@@ -176,7 +166,7 @@ function vaciarCarrito() {
 actualizarContador();
 pintarCarrito();
 
-// a todos los botones de comprar les ponemos el click
+
 let botonesComprar = document.querySelectorAll(".comprar");
 for (let i = 0; i < botonesComprar.length; i++) {
     botonesComprar[i].addEventListener("click", function () {
@@ -184,12 +174,38 @@ for (let i = 0; i < botonesComprar.length; i++) {
     });
 }
 
-// al confirmar el pedido se vacia el carrito y se va a pedido.html
+
 let formularioPedido = document.getElementById("form-pedido");
 if (formularioPedido != null) {
-    formularioPedido.addEventListener("submit", function () {
-        localStorage.removeItem("carrito");
+    formularioPedido.addEventListener("submit", function (evento) {
+        evento.preventDefault();
+
+        let carrito = leerCarrito();
+        let productos = [];
+        let total = 0;
+        let unidades = 0;
+        for (let i = 0; i < carrito.length; i++) {
+            productos.push(carrito[i].nombre + " x" + carrito[i].cantidad);
+            total = total + carrito[i].precio * carrito[i].cantidad;
+            unidades = unidades + carrito[i].cantidad;
+        }
+
+
+        let datos = new URLSearchParams(new FormData(formularioPedido));
+        datos.append("producto", productos.join(", "));
+        datos.append("precio", total);
+        datos.append("unidades", unidades);
+
+        fetch(urlPedido, { method: "POST", mode: "no-cors", body: datos })
+            .then(pedidoHecho)
+            .catch(pedidoHecho);
     });
+}
+
+
+function pedidoHecho() {
+    localStorage.removeItem("carrito");
+    window.location.href = "pedido.html";
 }
 
 let botonVaciar = document.getElementById("vaciar");
@@ -197,5 +213,5 @@ if (botonVaciar != null) {
     botonVaciar.addEventListener("click", vaciarCarrito);
 }
 
-// si vuelves atras con el navegador se actualiza el numerito
+
 window.addEventListener("pageshow", actualizarContador);
