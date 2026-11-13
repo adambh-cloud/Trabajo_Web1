@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wave Riders, tienda de motos de agua en Logroño">
+    <meta name="keywords" content="motos de agua, Sea-Doo, Yamaha, Kawasaki, Logroño">
+    <meta name="author" content="M.Y x B.H">
+    <title>Inicio - Wave Riders</title>
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <!-- letra de google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="css/estilos.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <!-- menu de arriba, igual en todas las paginas -->
+    <header>
+        <a href="index.html"><img src="img/logo.png" alt="Logo de Wave Riders" width="720" height="378"></a>
+        <nav>
+            <a href="index.html" class="activo">Inicio</a>
+            <a href="tienda.html">Catálogo</a>
+            <a href="sobre-nosotros.html">Sobre nosotros</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="carrito.html" class="carrito">Carrito <span id="contador"></span></a>
+        </nav>
+    </header>
+
+    <!-- portada con el video de fondo -->
+    <section class="hero">
+        <video autoplay muted loop playsinline poster="img/poster-inicio.jpg">
+            <source src="video/jetski_cinematico.mp4" type="video/mp4">
+        </video>
+        <!-- capa oscura para que se lea el texto encima del video -->
+        <div class="capa"></div>
+        <div class="hero-texto">
+            <h1 class="titulo-animado"><img src="img/logo.png" alt="Wave Riders" width="720" height="378"></h1>
+            <p>Tienda de motos de agua en Logroño</p>
+            <a href="tienda.html" class="boton">Ver catálogo</a>
+            <a href="contacto.html" class="boton boton-borde">Contacto</a>
+        </div>
+    </section>
+
+    <!-- categorias, cada una lleva a su parte del catalogo -->
+    <section class="seccion">
+        <div class="contenedor">
+            <h2>Categorías</h2>
+            <div class="categorias">
+                <a href="tienda.html#deportivas">
+                    <img src="img/motos/Sea-Doo_RXP-X_325.jpg" alt="Moto deportiva" width="800" height="450">
+                    <h3>Deportivas</h3>
+                    <p>4 motos</p>
+                </a>
+                <a href="tienda.html#lujo">
+                    <img src="img/motos/Sea-Doo_GTX_Limited_325.jpg" alt="Moto de lujo" width="800" height="450">
+                    <h3>De lujo</h3>
+                    <p>3 motos</p>
+                </a>
+                <a href="tienda.html#recreativas">
+                    <img src="img/motos/Sea-Doo_GTI_SE_170.jpg" alt="Moto recreativa" width="800" height="450">
+                    <h3>Recreativas</h3>
+                    <p>4 motos</p>
+                </a>
+                <a href="tienda.html#ligeras">
+                    <img src="img/motos/Sea-Doo_Spark_Trixx.jpg" alt="Moto ligera" width="800" height="450">
+                    <h3>Ligeras</h3>
+                    <p>3 motos</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- las 3 motos mas vendidas -->
+    <section class="seccion blanco">
+        <div class="contenedor">
+            <h2>Motos mejor valoradas</h2>
+            <div class="tarjetas tres">
+                <article class="tarjeta">
+                    <img src="img/motos/Sea-Doo_RXP-X_325.jpg" alt="Sea-Doo RXP-X 325" width="800" height="450">
+                    <div class="tarjeta-texto">
+                        <h3>Sea-Doo RXP-X 325</h3>
+                        <p>Motor Rotax 1630 ACE, 325 CV, 2 plazas. Diseñada para competición.</p>
+                        <div class="tarjeta-pie">
+                            <span class="precio">21.000 €</span>
+                            <button type="button" class="boton comprar" data-id="rxpx" data-nombre="Sea-Doo RXP-X 325" data-precio="21000" data-foto="img/motos/Sea-Doo_RXP-X_325.jpg">Comprar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tarjeta">
+                    <img src="img/motos/Yamaha_GP_HO.jpg" alt="Yamaha GP HO" width="800" height="450">
+                    <div class="tarjeta-texto">
+                        <h3>Yamaha GP HO</h3>
+                        <p>Motor 1.9 L High Output, 3 plazas. Deportiva y muy ágil.</p>
+                        <div class="tarjeta-pie">
+                            <span class="precio">16.500 €</span>
+                            <button type="button" class="boton comprar" data-id="gpho" data-nombre="Yamaha GP HO" data-precio="16500" data-foto="img/motos/Yamaha_GP_HO.jpg">Comprar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tarjeta">
+                    <img src="img/motos/Kawasaki_Ultra_310LX.jpg" alt="Kawasaki Ultra 310LX" width="800" height="450">
+                    <div class="tarjeta-texto">
+                        <h3>Kawasaki Ultra 310LX</h3>
+                        <p>Motor 1.5 L sobrealimentado, 310 CV, 3 plazas. Lujo y potencia.</p>
+                        <div class="tarjeta-pie">
+                            <span class="precio">24.000 €</span>
+                            <button type="button" class="boton comprar" data-id="ultralx" data-nombre="Kawasaki Ultra 310LX" data-precio="24000" data-foto="img/motos/Kawasaki_Ultra_310LX.jpg">Comprar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- franja con el otro video para pedir prueba -->
+    <section class="banda-video">
+        <video autoplay muted loop playsinline>
+            <source src="video/jetski_lado.mp4" type="video/mp4">
+        </video>
+        <div class="capa"></div>
+        <div class="banda-texto">
+            <h2>¿Quieres probar una moto?</h2>
+            <p>Puedes pedir una prueba antes de comprarla.</p>
+            <a href="contacto.html" class="boton">Pedir prueba</a>
+        </div>
+    </section>
+
+    <!-- por que elegirnos -->
+    <section class="seccion blanco">
+        <div class="contenedor">
+            <h2>¿Por qué deberías elegirnos?</h2>
+            <div class="ventajas">
+                <div>
+                    <h3>Mantenimiento al día</h3>
+                    <p>Revisamos todas las motos antes de venderlas.</p>
+                </div>
+                <div>
+                    <h3>Financiación</h3>
+                    <p>Puedes pagar la moto a plazos.</p>
+                </div>
+                <div>
+                    <h3>Atención al cliente</h3>
+                    <p>Te ayudamos a elegir la moto que mejor te venga.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- javascript del carrito (guarda las motos y pone el numerito del menu) -->
+    <script src="js/carrito.js"></script>
+</body>
+</html>

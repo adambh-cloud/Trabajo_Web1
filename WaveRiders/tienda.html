@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo de motos de agua de Wave Riders">
+    <meta name="author" content="M.Y x B.H">
+    <title>Catálogo - Wave Riders</title>
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <!-- letra de google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="css/estilos.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <!-- menu de arriba, igual en todas las paginas -->
+    <header>
+        <a href="index.html"><img src="img/logo.png" alt="Logo de Wave Riders" width="720" height="378"></a>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="tienda.html" class="activo">Catálogo</a>
+            <a href="sobre-nosotros.html">Sobre nosotros</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="carrito.html" class="carrito">Carrito <span id="contador"></span></a>
+        </nav>
+    </header>
+
+    <!-- titulo con video de fondo -->
+    <section class="banner">
+        <!-- video de la moto pasando de lado -->
+        <video autoplay muted loop playsinline>
+            <source src="video/jetski_lado.mp4" type="video/mp4">
+        </video>
+        <div class="capa"></div>
+        <div class="contenedor banner-texto">
+            <h1>Catálogo</h1>
+            <p>Elige tu próxima experiencia en el mar.</p>
+        </div>
+    </section>
+
+    <section class="seccion">
+        <div class="contenedor">
+
+            <!-- botones para saltar a cada categoria -->
+            <div class="menu-categorias">
+                <a href="#deportivas">Deportivas</a>
+                <a href="#lujo">De lujo</a>
+                <a href="#recreativas">Recreativas</a>
+                <a href="#ligeras">Ligeras</a>
+            </div>
+
+            <!-- DEPORTIVAS -->
+            <section class="categoria" id="deportivas">
+                <h2>Deportivas</h2>
+                <p>Las más rápidas y potentes.</p>
+                <div class="tarjetas">
+                    <article class="tarjeta">
+                        <img src="img/motos/Sea-Doo_RXP-X_325.jpg" alt="Sea-Doo RXP-X 325" width="800" height="450">
+                        <div class="tarjeta-texto">
+                            <h3>Sea-Doo RXP-X 325</h3>
+                            <p>Motor Rotax 1630 ACE, 325 CV, 2 plazas. Diseñada para competición.</p>
+                            <div class="tarjeta-pie">
+                                <span class="precio">21.000 €</span>
+                                <button type="button" class="boton comprar" data-id="rxpx" data-nombre="Sea-Doo RXP-X 325" data-precio="21000" data-foto="img/motos/Sea-Doo_RXP-X_325.jpg">Comprar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta">
+                        <img src="img/motos/Yamaha_GP_HO.jpg" alt="Yamaha GP HO" width="800" height="450">
+                        <div class="tarjeta-texto">
+                            <h3>Yamaha GP HO</h3>
+                            <p>Motor 1.9 L High Output, 3 plazas. Deportiva y muy ágil.</p>
+                            <div class="tarjeta-pie">
+                                <span class="precio">16.500 €</span>
+                                <button type="button" class="boton comprar" data-id="gpho" data-nombre="Yamaha GP HO" data-precio="16500" data-foto="img/motos/Yamaha_GP_HO.jpg">Comprar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta">
+                        <img src="img/motos/Yamaha_GP_SVHO.jpg" alt="Yamaha GP SVHO" width="800" height="450">
+                        <div class="tarjeta-texto">
+                            <h3>Yamaha GP SVHO</h3>
+                            <p>Motor 1.8 L SVHO con compresor, 3 plazas. La GP más rápida de Yamaha.</p>
+                            <div class="tarjeta-pie">
+                                <span class="precio">20.000 €</span>
+                                <button type="button" class="boton comprar" data-id="gpsvho" data-nombre="Yamaha GP SVHO" data-precio="20000" data-foto="img/motos/Yamaha_GP_SVHO.jpg">Comprar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta">
+                        <img src="img/motos/Kawasaki_Ultra_310X.jpg" alt="Kawasaki Ultra 310X" width="800" height="450">
+                        <div class="tarjeta-texto">
+                            <h3>Kawasaki Ultra 310X</h3>
+                            <p>Motor 1.5 L con compresor, 310 CV, 3 plazas. Mucha potencia y muy estable.</p>
+                            <div class="tarjeta-pie">
+                                <span class="precio">22.000 €</span>
+                                <button type="button" class="boton comprar" data-id="ultrax" data-nombre="Kawasaki Ultra 310X" data-precio="22000" data-foto="img/motos/Kawasaki_Ultra_310X.jpg">Comprar</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- DE LUJO -->
+            <section class="categoria" id="lujo">
+                <h2>De lujo</h2>
+                <p>Más cómodas y con más extras.</p>
+                <div class="tarjetas">
+                    <article class="tarjeta">
+                        <img src="img/motos/Kawasaki_Ultra_310LX.jpg" alt="Kawasaki Ultra 310LX" width="800" height="450">
+                        <div class="tarjeta-texto">
+                            <h3>Kawasaki Ultra 310LX</h3>
+                            <p>Motor 1.5 L sobrealimentado, 310 CV, 3 plazas. Lujo y potencia.</p>
+                            <div class="tarjeta-pie">
+                                <span class="precio">24.000 €</span>
+                                <button type="button" class="boton comprar" data-id="ultralx" data-nombre="Kawasaki Ultra 310LX" data-precio="24000" data-foto="img/motos/Kawasaki_Ultra_310LX.jpg">Comprar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta">
+                        <img src="img/motos/Sea-Doo_GTX_Limited_325.jpg" alt="Sea-Doo GTX Limited 325" width="800" height="450">
+                        <div class="tarjeta-texto">
+                            <h3>Sea-Doo GTX Limited 325</h3>
+                            <p>Motor Rotax 1630 ACE, 325 CV, 3 plazas. Con equipo de música y acabados premium.</p>
+                            <div class="tarjeta-pie">
+                                <span class="precio">26.000 €</span>
+                                <button type="button" class="boton comprar" data-id="gtxltd" data-nombre="Sea-Doo GTX Limited 325" data-precio="26000" data-foto="img/motos/Sea-Doo_GTX_Limited_325.jpg">Comprar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta">
+                        <img src="img/motos/Yamaha_FX_Cruiser_SVHO.jpg" alt="Yamaha FX Cruiser SVHO" width="800" height="450">
+                        <div class="tarjeta-texto">
+                            <h3>Yamaha FX Cruiser SVHO</h3>
+                            <p>Motor 1.8 L SVHO, 3 plazas. Asiento más cómodo y pantalla táctil.</p>
+                            <div class="tarjeta-pie">
+                                <span class="precio">22.000 €</span>
+                                <button type="button" class="boton comprar" data-id="fxcruiser" data-nombre="Yamaha FX Cruiser SVHO" data-precio="22000" data-foto="img/motos/Yamaha_FX_Cruiser_SVHO.jpg">Comprar</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- RECREATIVAS -->
+            <section class="categoria" id="recreativas">
+                <h2>Recreativas</h2>
+                <p>Para dar paseos con la familia.</p>
+                <div class="tarjetas">
+                    <article class="tarjeta">
+                        <img src="img/motos/Yamaha_VX_Cruiser.jpg" alt="Yamaha VX Cruiser" width="800" height="450">
+                        <div class="tarjeta-texto">
+                            <h3>Yamaha VX Cruiser</h3>
+                            <p>Motor 1.8 L, 3 plazas. Cómoda y perfecta para paseos en familia.</p>
+                            <div class="tarjeta-pie">
+                                <span class="precio">14.000 €</span>
+                                <button type="button" class="boton comprar" data-id="vxcruiser" data-nombre="Yamaha VX Cruiser" data-precio="14000" data-foto="img/motos/Yamaha_VX_Cruiser.jpg">Comprar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta">
+                        <img src="img/motos/Kawasaki_STX_160.jpg" alt="Kawasaki STX 160" width="800" height="450">
+                        <div class="tarjeta-texto">
+                            <h3>Kawasaki STX 160</h3>
+                            <p>Motor 1.5 L, 160 CV, 3 plazas. Equilibrio entre deporte y comodidad.</p>
+                            <div class="tarjeta-pie">
+                                <span class="precio">13.000 €</span>
+                                <button type="button" class="boton comprar" data-id="stx" data-nombre="Kawasaki STX 160" data-precio="13000" data-foto="img/motos/Kawasaki_STX_160.jpg">Comprar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta">
+                        <img src="img/motos/Sea-Doo_GTI_SE_170.jpg" alt="Sea-Doo GTI SE 170" width="800" height="450">
+                        <div class="tarjeta-texto">
+                            <h3>Sea-Doo GTI SE 170</h3>
+                            <p>Motor Rotax 1630 ACE, 170 CV, 3 plazas. Estable y fácil de llevar.</p>
+                            <div class="tarjeta-pie">
+                                <span class="precio">15.000 €</span>
+                                <button type="button" class="boton comprar" data-id="gtise" data-nombre="Sea-Doo GTI SE 170" data-precio="15000" data-foto="img/motos/Sea-Doo_GTI_SE_170.jpg">Comprar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta">
+                        <img src="img/motos/Sea-Doo_Explorer_Pro_170.jpg" alt="Sea-Doo Explorer Pro 170" width="800" height="450">
+                        <div class="tarjeta-texto">
+                            <h3>Sea-Doo Explorer Pro 170</h3>
+                            <p>Motor Rotax 1630 ACE, 170 CV, 3 plazas. Pensada para hacer rutas largas.</p>
+                            <div class="tarjeta-pie">
+                                <span class="precio">19.000 €</span>
+                                <button type="button" class="boton comprar" data-id="explorer" data-nombre="Sea-Doo Explorer Pro 170" data-precio="19000" data-foto="img/motos/Sea-Doo_Explorer_Pro_170.jpg">Comprar</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- LIGERAS -->
+            <section class="categoria" id="ligeras">
+                <h2>Ligeras</h2>
+                <p>Pequeñas y fáciles de llevar.</p>
+                <div class="tarjetas">
+                    <article class="tarjeta">
+                        <img src="img/motos/Sea-Doo_Spark_Trixx.jpg" alt="Sea-Doo Spark Trixx" width="800" height="450">
+                        <div class="tarjeta-texto">
+                            <h3>Sea-Doo Spark Trixx</h3>
+                            <p>Motor Rotax 900 ACE, 90 CV, 2 plazas. Ligera e ideal para acrobacias.</p>
+                            <div class="tarjeta-pie">
+                                <span class="precio">9.500 €</span>
+                                <button type="button" class="boton comprar" data-id="spark" data-nombre="Sea-Doo Spark Trixx" data-precio="9500" data-foto="img/motos/Sea-Doo_Spark_Trixx.jpg">Comprar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta">
+                        <img src="img/motos/Yamaha_JetBlaster.jpg" alt="Yamaha JetBlaster" width="800" height="450">
+                        <div class="tarjeta-texto">
+                            <h3>Yamaha JetBlaster</h3>
+                            <p>Motor 1.0 L TR-1, 2 plazas. Pequeña y muy divertida.</p>
+                            <div class="tarjeta-pie">
+                                <span class="precio">9.000 €</span>
+                                <button type="button" class="boton comprar" data-id="jetblaster" data-nombre="Yamaha JetBlaster" data-precio="9000" data-foto="img/motos/Yamaha_JetBlaster.jpg">Comprar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta">
+                        <img src="img/motos/Kawasaki_SX-R_160.jpg" alt="Kawasaki SX-R 160" width="800" height="450">
+                        <div class="tarjeta-texto">
+                            <h3>Kawasaki SX-R 160</h3>
+                            <p>Motor 1.5 L, 160 CV, 1 plaza. Se lleva de pie.</p>
+                            <div class="tarjeta-pie">
+                                <span class="precio">12.000 €</span>
+                                <button type="button" class="boton comprar" data-id="sxr" data-nombre="Kawasaki SX-R 160" data-precio="12000" data-foto="img/motos/Kawasaki_SX-R_160.jpg">Comprar</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+        </div>
+    </section>
+
+    <!-- javascript del carrito (guarda las motos y pone el numerito del menu) -->
+    <script src="js/carrito.js"></script>
+</body>
+</html>

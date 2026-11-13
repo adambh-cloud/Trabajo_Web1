@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pedido realizado en Wave Riders">
+    <meta name="author" content="M.Y x B.H">
+    <title>Pedido realizado - Wave Riders</title>
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <!-- letra de google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="css/estilos.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <!-- menu de arriba, igual en todas las paginas -->
+    <header>
+        <a href="index.html"><img src="img/logo.png" alt="Logo de Wave Riders" width="720" height="378"></a>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="tienda.html">Catálogo</a>
+            <a href="sobre-nosotros.html">Sobre nosotros</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="carrito.html" class="carrito">Carrito <span id="contador"></span></a>
+        </nav>
+    </header>
+
+    <!-- mensaje cuando se confirma el pedido en el carrito -->
+    <section class="seccion">
+        <div class="confirmacion">
+            <img src="img/logo.png" alt="Wave Riders" width="720" height="378">
+            <h1>Pedido realizado</h1>
+            <p>Gracias por tu compra. Te llamaremos lo antes posible para confirmar el pedido.</p>
+            <a href="tienda.html" class="boton">Volver al catálogo</a>
+        </div>
+    </section>
+
+    <!-- javascript del carrito (guarda las motos y pone el numerito del menu) -->
+    <script src="js/carrito.js"></script>
+</body>
+</html>

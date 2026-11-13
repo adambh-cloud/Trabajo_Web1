@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Carrito de la tienda Wave Riders">
+    <meta name="author" content="M.Y x B.H">
+    <title>Carrito - Wave Riders</title>
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <!-- letra de google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="css/estilos.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <!-- menu de arriba, igual en todas las paginas -->
+    <header>
+        <a href="index.html"><img src="img/logo.png" alt="Logo de Wave Riders" width="720" height="378"></a>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="tienda.html">Catálogo</a>
+            <a href="sobre-nosotros.html">Sobre nosotros</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="carrito.html" class="carrito activo">Carrito <span id="contador"></span></a>
+        </nav>
+    </header>
+
+    <!-- titulo con video de fondo -->
+    <section class="banner">
+        <!-- video de la moto pasando de lado -->
+        <video autoplay muted loop playsinline>
+            <source src="video/jetski_lado.mp4" type="video/mp4">
+        </video>
+        <div class="capa"></div>
+        <div class="contenedor banner-texto">
+            <h1>Carrito</h1>
+            <p>Estas son las motos que has elegido.</p>
+        </div>
+    </section>
+
+    <section class="seccion">
+        <div class="contenedor pedido">
+
+            <!-- columna de la izquierda con las motos -->
+            <div class="lista-motos">
+                <!-- aviso que sale si no has comprado nada -->
+                <div id="vacio" class="vacio">
+                    <h2>Tu carrito está vacío</h2>
+                    <p>Todavía no has añadido ninguna moto.</p>
+                    <a href="tienda.html" class="boton">Ir al catálogo</a>
+                </div>
+
+                <!-- aqui el javascript mete las motos que has comprado -->
+                <div id="lista-carrito"></div>
+            </div>
+
+            <!-- columna de la derecha: total y datos para el pedido -->
+            <aside id="resumen" class="resumen">
+                <h2>Resumen</h2>
+                <p class="total-linea"><span>Total</span><span id="total"></span></p>
+                <p>Motos en el carrito: <span id="unidades"></span></p>
+
+                <!-- al confirmar te lleva a pedido.html -->
+                <form id="form-pedido" action="pedido.html" method="get">
+                    <fieldset>
+                        <legend>Tus datos</legend>
+                        <p>
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </p>
+                        <p>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </p>
+                        <p>
+                            <label for="telefono">Teléfono:</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </p>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Entrega y pago</legend>
+                        <p>
+                            <input type="radio" id="tienda" name="entrega" value="tienda" checked>
+                            <label for="tienda">Recoger en tienda</label><br>
+                            <input type="radio" id="casa" name="entrega" value="casa">
+                            <label for="casa">Envío a casa</label>
+                        </p>
+                        <p>
+                            <label for="pago">Forma de pago:</label>
+                            <select id="pago" name="pago">
+                                <option value="tienda">Pago en tienda</option>
+                                <option value="transferencia">Transferencia</option>
+                                <option value="financiacion">Financiación</option>
+                            </select>
+                        </p>
+                    </fieldset>
+
+                    <p>
+                        <input type="checkbox" id="condiciones" name="condiciones" required>
+                        <label for="condiciones">Acepto las condiciones de compra</label>
+                    </p>
+
+                    <button type="submit" class="boton">Confirmar pedido</button>
+                </form>
+
+                <button type="button" id="vaciar" class="vaciar">Vaciar carrito</button>
+            </aside>
+
+        </div>
+    </section>
+
+    <!-- javascript del carrito (guarda las motos y pone el numerito del menu) -->
+    <script src="js/carrito.js"></script>
+</body>
+</html>

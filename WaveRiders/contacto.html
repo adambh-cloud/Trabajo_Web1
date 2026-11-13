@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacto de la tienda Wave Riders">
+    <meta name="author" content="M.Y x B.H">
+    <title>Contacto - Wave Riders</title>
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <!-- letra de google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="css/estilos.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <!-- menu de arriba, igual en todas las paginas -->
+    <header>
+        <a href="index.html"><img src="img/logo.png" alt="Logo de Wave Riders" width="720" height="378"></a>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="tienda.html">Catálogo</a>
+            <a href="sobre-nosotros.html">Sobre nosotros</a>
+            <a href="contacto.html" class="activo">Contacto</a>
+            <a href="carrito.html" class="carrito">Carrito <span id="contador"></span></a>
+        </nav>
+    </header>
+
+    <!-- titulo con video de fondo -->
+    <section class="banner">
+        <!-- video de la moto pasando de lado -->
+        <video autoplay muted loop playsinline>
+            <source src="video/jetski_lado.mp4" type="video/mp4">
+        </video>
+        <div class="capa"></div>
+        <div class="contenedor banner-texto">
+            <h1>Contacto</h1>
+            <p>¿Tienes alguna pregunta o quieres reservar una prueba? Escríbenos.</p>
+        </div>
+    </section>
+
+    <section class="seccion">
+        <div class="contenedor contacto">
+
+            <!-- formulario de contacto -->
+            <form action="#" method="post">
+                <h2>Envíanos un mensaje</h2>
+
+                <fieldset>
+                    <legend>Tus datos</legend>
+                    <p>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </p>
+                    <p>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </p>
+                    <p>
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Consulta</legend>
+                    <p>
+                        <label for="moto">Moto que te interesa:</label>
+                        <select id="moto" name="moto">
+                            <option value="">Selecciona una moto</option>
+                            <optgroup label="Deportivas">
+                                <option value="rxpx">Sea-Doo RXP-X 325</option>
+                                <option value="gpho">Yamaha GP HO</option>
+                                <option value="gpsvho">Yamaha GP SVHO</option>
+                                <option value="ultrax">Kawasaki Ultra 310X</option>
+                            </optgroup>
+                            <optgroup label="De lujo">
+                                <option value="ultralx">Kawasaki Ultra 310LX</option>
+                                <option value="gtxltd">Sea-Doo GTX Limited 325</option>
+                                <option value="fxcruiser">Yamaha FX Cruiser SVHO</option>
+                            </optgroup>
+                            <optgroup label="Recreativas">
+                                <option value="vxcruiser">Yamaha VX Cruiser</option>
+                                <option value="stx">Kawasaki STX 160</option>
+                                <option value="gtise">Sea-Doo GTI SE 170</option>
+                                <option value="explorer">Sea-Doo Explorer Pro 170</option>
+                            </optgroup>
+                            <optgroup label="Ligeras">
+                                <option value="spark">Sea-Doo Spark Trixx</option>
+                                <option value="jetblaster">Yamaha JetBlaster</option>
+                                <option value="sxr">Kawasaki SX-R 160</option>
+                            </optgroup>
+                        </select>
+                    </p>
+                    <p>
+                        Motivo de contacto:<br>
+                        <input type="radio" id="info" name="motivo" value="informacion" checked>
+                        <label for="info">Información</label>
+                        <input type="radio" id="prueba" name="motivo" value="prueba">
+                        <label for="prueba">Prueba</label>
+                        <input type="radio" id="financiacion" name="motivo" value="financiacion">
+                        <label for="financiacion">Financiación</label>
+                    </p>
+                    <p>
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" cols="40"></textarea>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <input type="checkbox" id="privacidad" name="privacidad" required>
+                    <label for="privacidad">Acepto la política de privacidad</label>
+                </p>
+
+                <button type="submit" class="boton">Enviar</button>
+                <button type="reset" class="boton boton-gris">Borrar</button>
+            </form>
+
+            <!-- datos de la tienda y mapa -->
+            <aside>
+                <div class="dato">
+                    <h3>Dirección</h3>
+                    <p>Calle Dr. Múgica, 9, 26002 Logroño, La Rioja</p>
+                </div>
+                <div class="dato">
+                    <h3>Teléfono</h3>
+                    <p>677 67 67 67</p>
+                </div>
+                <div class="dato">
+                    <h3>Email</h3>
+                    <p>adam.bhamidan@salesianoslosboscos.com</p>
+                    <p>mouhammedyoussef.elmouadden@salesianoslosboscos.com</p>
+                </div>
+                <div class="dato">
+                    <h3>Horario</h3>
+                    <p>De lunes a sábado, mañana y tarde. Domingos cerrado.</p>
+                </div>
+                <!-- mapa de google maps -->
+                <iframe src="https://www.google.com/maps?q=Calle+Dr.+M%C3%BAgica+9,+26002+Logro%C3%B1o&amp;output=embed" title="Mapa de la tienda" loading="lazy"></iframe>
+            </aside>
+
+        </div>
+    </section>
+
+    <!-- javascript del carrito (guarda las motos y pone el numerito del menu) -->
+    <script src="js/carrito.js"></script>
+</body>
+</html>
