@@ -1,8 +1,4 @@
-/* ===== WAVE RIDERS - hoja de estilos ===== */
-
-/*-----cosas generales para toda la web-----*/
-
-/* asi el padding y el borde no hacen la caja mas grande */
+/* M.Y */
 * {
     box-sizing: border-box;
 }
@@ -14,7 +10,6 @@ body {
     background-color: #f2f5f7;
 }
 
-/* que las fotos no se salgan de su caja y no se deformen */
 img {
     max-width: 100%;
     height: auto;
@@ -25,29 +20,20 @@ h1, h2, h3 {
     margin-top: 0;
 }
 
-/* caja del centro para que en pantallas grandes no se estire todo */
 .contenedor {
     max-width: 1100px;
     margin: 0 auto;
 }
 
-/* espacio de arriba y abajo de cada parte de la pagina */
 .seccion {
     padding: 60px 5%;
 }
 
-/* para las secciones que van con fondo blanco */
 .blanco {
     background-color: white;
 }
 
-/*-----cabecera de arriba (logo + menu)-----*/
-
-/* sticky = se queda pegada arriba al bajar */
 header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -57,13 +43,11 @@ header {
     background-color: #0b1f2e;
 }
 
-/* tamaño del logo de arriba */
 header img {
     height: 55px;
     width: auto;
 }
 
-/*-----menu de navegacion-----*/
 /* cosa guapa */
 nav {
     display: flex;
@@ -79,46 +63,40 @@ nav a {
     transition: all 0.3s ease-out;
 }
 
-/* al pasar el raton se pone blanco */
 nav a:hover {
     background-color: white;
     color: #0b1f2e;
 }
 
-/* la pagina en la que estas sale en azul */
 nav a.activo {
     background-color: #0096c7;
     color: white;
 }
 
-/* el enlace del carrito con borde para que se vea mas */
 nav a.carrito {
     border: 2px solid #0096c7;
 }
 
-/*-----botones-----*/
 .boton {
     display: inline-block;
     padding: 10px 20px;
     border: 2px solid #0096c7;
-    border-radius: 25px; /* Bordes redondeados */
+    border-radius: 25px;  /* Bordes redondeados */
     background-color: #0096c7;
     color: white;
-    font-family: inherit;
+    font-family: 'Poppins', Arial, sans-serif;
     font-size: 0.95rem;
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s;
 }
 
-/* efecto al pasar el raton, se oscurece un poco */
 .boton:hover {
     background-color: #0077a3;
     border-color: #0077a3;
 }
 
-/* boton transparente con borde blanco (el de la portada) */
 .boton-borde {
     background-color: transparent;
     border-color: white;
@@ -130,7 +108,6 @@ nav a.carrito {
     color: #0b1f2e;
 }
 
-/* boton gris para borrar el formulario */
 .boton-gris {
     background-color: white;
     border-color: #ccd6dd;
@@ -142,24 +119,22 @@ nav a.carrito {
     border-color: #ccd6dd;
 }
 
-/*-----portada con el video de fondo-----*/
+.boton.anadida {
+    background-color: #2a9d8f;
+    border-color: #2a9d8f;
+}
+
 .hero,
-.banda-video {
-    position: relative; /* para poder poner el video por detras */
-    overflow: hidden;   /* que el video no se salga */
+.banda-video,
+.banner {
+    position: relative;
+    overflow: hidden;
     color: white;
 }
 
-.hero {
-    min-height: 85vh; /* casi toda la pantalla */
-    display: flex;
-    align-items: center;
-    padding: 40px 5%;
-}
-
-/* el video ocupa todo el fondo y se recorta sin deformarse */
 .hero video,
-.banda-video video {
+.banda-video video,
+.banner video {
     position: absolute;
     top: 0;
     left: 0;
@@ -168,7 +143,6 @@ nav a.carrito {
     object-fit: cover;
 }
 
-/* capa negra transparente encima del video para que se lea el texto */
 .capa {
     position: absolute;
     top: 0;
@@ -178,14 +152,20 @@ nav a.carrito {
     background-color: rgba(0, 10, 20, 0.5);
 }
 
-/* el texto va encima de todo */
 .hero-texto,
-.banda-texto {
+.banda-texto,
+.banner-texto {
     position: relative;
     z-index: 1;
 }
 
-/* logo grande de la portada */
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 600px;
+    padding: 40px 5%;
+}
+
 .hero-texto img {
     width: 520px;
     margin-bottom: 10px;
@@ -200,14 +180,11 @@ nav a.carrito {
     margin-right: 10px;
 }
 
-/*-----franja del segundo video (la de pedir prueba)-----*/
-/* el texto va arriba y abajo se deja hueco para que se vea pasar la moto */
 .banda-video {
     padding: 60px 5% 160px;
     text-align: center;
 }
 
-/* se enseña la parte de arriba del video, asi la moto sale abajo */
 .banda-video video {
     object-position: center top;
 }
@@ -217,44 +194,8 @@ nav a.carrito {
     margin-bottom: 10px;
 }
 
-/* Animación para el título Wave riders en la pagina de Index (M.Y) */
-@keyframes deslizarDesdeDerecha {
-    0% {
-        transform: translateX(100px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-/* Aplicado al logo de la portada */
-.titulo-animado {
-    animation: deslizarDesdeDerecha 1s ease-out;
-}
-
-/*-----titulo de las demas paginas con el video de la moto de lado-----*/
-/* funciona igual que la portada: video detras, capa oscura y texto encima */
 .banner {
-    position: relative;
-    overflow: hidden;
     padding: 100px 5%;
-    color: white;
-}
-
-.banner video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.banner-texto {
-    position: relative;
-    z-index: 1;
 }
 
 .banner h1 {
@@ -267,7 +208,23 @@ nav a.carrito {
     font-size: 1.1rem;
 }
 
-/*-----cajas de categorias del inicio-----*/
+/* Animación para el título Wave riders en la pagina de Index*/
+@keyframes deslizarDesdeDerecha {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Aplicado y centrado */
+.titulo-animado {
+    animation: deslizarDesdeDerecha 1s ease-out;
+}
+
 .categorias {
     display: flex;
     flex-wrap: wrap;
@@ -284,7 +241,6 @@ nav a.carrito {
     transition: transform 0.3s;
 }
 
-/* efecto: la caja sube un poco al pasar el raton */
 .categorias a:hover {
     transform: translateY(-5px);
 }
@@ -305,36 +261,25 @@ nav a.carrito {
     font-size: 0.9rem;
 }
 
-/*-----tarjetas de las motos-----*/
-
-/* fila de tarjetas, si no caben bajan a la siguiente linea */
 .tarjetas {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
 
-/* 4 tarjetas por fila */
 .tarjeta {
-    flex: 0 0 calc(25% - 15px);
+    flex: 1 1 220px;
     display: flex;
     flex-direction: column;
     background-color: white;
+    border: 1px solid #dfe6eb;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s;
 }
 
-/* en el inicio van 3 por fila */
-.tres .tarjeta {
-    flex-basis: calc(33.33% - 14px);
-}
-
-/*-----efecto tarjeta: sube y le sale mas sombra-----*/
 .tarjeta:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .tarjeta-texto {
@@ -356,7 +301,6 @@ nav a.carrito {
     color: #5b6b77;
 }
 
-/* precio y boton abajo del todo aunque el texto sea mas corto */
 .tarjeta-pie {
     margin-top: auto;
     display: flex;
@@ -369,7 +313,6 @@ nav a.carrito {
     font-weight: 700;
 }
 
-/*-----catalogo: botones para saltar a cada categoria-----*/
 .menu-categorias {
     display: flex;
     flex-wrap: wrap;
@@ -379,11 +322,11 @@ nav a.carrito {
 
 .menu-categorias a {
     padding: 8px 18px;
+    border: 1px solid #d5dde3;
     border-radius: 20px;
     background-color: white;
     color: #1d2b36;
     text-decoration: none;
-    border: 1px solid #d5dde3;
     transition: all 0.3s;
 }
 
@@ -392,10 +335,8 @@ nav a.carrito {
     color: white;
 }
 
-/* scroll-margin para que la cabecera no tape el titulo al saltar */
 .categoria {
     margin-bottom: 50px;
-    scroll-margin-top: 90px;
 }
 
 .categoria h2 {
@@ -407,7 +348,6 @@ nav a.carrito {
     color: #5b6b77;
 }
 
-/*-----cajitas de por que elegirnos-----*/
 .ventajas {
     display: flex;
     flex-wrap: wrap;
@@ -417,9 +357,9 @@ nav a.carrito {
 .ventajas div {
     flex: 1 1 250px;
     padding: 25px;
+    border-left: 5px solid #0096c7;
     border-radius: 12px;
     background-color: #f2f5f7;
-    border-left: 5px solid #0096c7; /* rayita azul a la izquierda */
 }
 
 .ventajas h3 {
@@ -431,7 +371,6 @@ nav a.carrito {
     color: #5b6b77;
 }
 
-/*-----sobre nosotros: texto a un lado y foto al otro-----*/
 .dos-columnas {
     display: flex;
     flex-wrap: wrap;
@@ -447,11 +386,10 @@ nav a.carrito {
     border-radius: 12px;
 }
 
-/*-----tabla del horario-----*/
 table {
     width: 100%;
     max-width: 600px;
-    border-collapse: collapse; /* que no salgan bordes dobles */
+    border-collapse: collapse;
     background-color: white;
 }
 
@@ -473,19 +411,17 @@ th {
     color: white;
 }
 
-/* el domingo cerrado en rojo */
 .cerrado {
     color: #e63946;
     font-weight: 700;
     text-align: center;
 }
 
-/*-----formularios (contacto y pedido)-----*/
+/* Formularios de la pagina Contacto */
 form p {
     margin: 0 0 15px;
 }
 
-/* todos los campos de escribir igual de anchos */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -496,19 +432,10 @@ textarea {
     margin-top: 5px;
     border: 1px solid #ccd6dd;
     border-radius: 6px;
-    font-family: inherit;
+    font-family: 'Poppins', Arial, sans-serif;
     font-size: 0.95rem;
 }
 
-/* cuando pinchas en un campo se marca en azul */
-input:focus,
-select:focus,
-textarea:focus {
-    outline: 2px solid #0096c7;
-    border-color: transparent;
-}
-
-/* el recuadro que agrupa campos */
 fieldset {
     margin: 0 0 20px;
     padding: 15px 20px;
@@ -521,7 +448,6 @@ legend {
     padding: 0 5px;
 }
 
-/*-----contacto: formulario a la izquierda y datos a la derecha-----*/
 .contacto {
     display: flex;
     flex-wrap: wrap;
@@ -540,7 +466,6 @@ legend {
     flex: 1 1 280px;
 }
 
-/* cada cajita de direccion, telefono... */
 .dato {
     margin-bottom: 15px;
     padding: 18px;
@@ -554,14 +479,20 @@ legend {
     color: #0096c7;
 }
 
-/* overflow-wrap: los emails largos se parten en dos lineas.
-   sin esto la columna se hacia enorme y la pagina se veia pequeña */
 .dato p {
     margin: 0;
-    overflow-wrap: anywhere;
 }
 
-/* el mapa de google */
+.aviso {
+    display: none;
+    margin: 15px 0 0;
+    padding: 12px 15px;
+    border-radius: 8px;
+    background-color: #e3f6f1;
+    color: #1e7a68;
+    font-weight: 600;
+}
+
 iframe {
     width: 100%;
     height: 250px;
@@ -569,32 +500,16 @@ iframe {
     border-radius: 12px;
 }
 
-/*==========================================
-  CARRITO
-  las filas de las motos las crea el javascript (js/carrito.js)
-==========================================*/
-
-/*-----boton comprar cuando lo acabas de pulsar (se pone verde un momento)-----*/
-.boton.anadida {
-    background-color: #2a9d8f;
-    border-color: #2a9d8f;
-}
-
-/*-----numerito rojo al lado de Carrito en el menu-----*/
-/* empieza escondido, el javascript lo enseña si hay motos */
 #contador {
     display: none;
-    min-width: 20px;
     margin-left: 4px;
     padding: 0 6px;
     border-radius: 10px;
     background-color: #e63946;
     color: white;
     font-size: 0.75rem;
-    text-align: center;
 }
 
-/* lista de motos a la izquierda y resumen a la derecha */
 .pedido {
     display: flex;
     flex-wrap: wrap;
@@ -606,7 +521,6 @@ iframe {
     flex: 2 1 500px;
 }
 
-/* cada fila de moto */
 .fila {
     display: flex;
     flex-wrap: wrap;
@@ -638,7 +552,6 @@ iframe {
     font-size: 0.9rem;
 }
 
-/*-----botones - y + de la cantidad-----*/
 .cantidad {
     display: flex;
     align-items: center;
@@ -652,7 +565,6 @@ iframe {
     border: 1px solid #ccd6dd;
     border-radius: 6px;
     background-color: white;
-    font-family: inherit;
     font-weight: 700;
     cursor: pointer;
 }
@@ -666,14 +578,13 @@ iframe {
     font-weight: 700;
 }
 
-/* boton rojo para quitar la moto */
 .quitar {
     padding: 8px 16px;
     border: none;
     border-radius: 20px;
     background-color: #e63946;
     color: white;
-    font-family: inherit;
+    font-family: 'Poppins', Arial, sans-serif;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -682,7 +593,6 @@ iframe {
     background-color: #c62f3b;
 }
 
-/* caja del carrito vacio, la enseña el javascript */
 .vacio {
     display: none;
     padding: 40px;
@@ -695,16 +605,12 @@ iframe {
     color: #5b6b77;
 }
 
-/*-----caja del resumen (total y datos)-----*/
-/* sticky para que el total se vea siempre al bajar */
 .resumen {
     flex: 1 1 300px;
-    position: sticky;
-    top: 90px;
     padding: 25px;
+    border: 1px solid #dfe6eb;
     border-radius: 12px;
     background-color: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .total-linea {
@@ -718,21 +624,19 @@ iframe {
     width: 100%;
 }
 
-/* boton de vaciar que parece un enlace rojo */
 .vaciar {
     display: block;
     width: 100%;
     margin-top: 12px;
     border: none;
-    background: none;
+    background-color: transparent;
     color: #e63946;
-    font-family: inherit;
+    font-family: 'Poppins', Arial, sans-serif;
     font-size: 0.9rem;
     text-decoration: underline;
     cursor: pointer;
 }
 
-/*-----pagina de pedido hecho-----*/
 .confirmacion {
     max-width: 550px;
     margin: 60px auto;
@@ -745,48 +649,4 @@ iframe {
 .confirmacion img {
     width: 230px;
     margin: 0 auto 20px;
-}
-
-/*-----para tablets: 2 tarjetas por fila-----*/
-@media (max-width: 900px) {
-    .tarjeta,
-    .tres .tarjeta {
-        flex-basis: calc(50% - 10px);
-    }
-
-    /* en pantalla pequeña el resumen va debajo y no se pega */
-    .resumen {
-        position: static;
-    }
-}
-
-/*-----para movil: 1 tarjeta por fila y menu centrado-----*/
-@media (max-width: 600px) {
-    /* en movil la cabecera no se queda pegada porque ocupa mucho */
-    header {
-        position: static;
-        justify-content: center;
-    }
-
-    nav a {
-        padding: 6px 10px;
-        font-size: 0.9rem;
-    }
-
-    nav {
-        justify-content: center;
-    }
-
-    .tarjeta,
-    .tres .tarjeta {
-        flex-basis: 100%;
-    }
-
-    .banner h1 {
-        font-size: 2rem;
-    }
-
-    .contacto form {
-        padding: 20px;
-    }
 }
